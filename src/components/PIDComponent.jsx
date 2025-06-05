@@ -3,9 +3,10 @@ import Regulator from "./Regulator"
 export default function PIDComponent(props){
     return(
         <div class="regulator">
-            <Regulator title="Proportional" minValue={0} maxValue={228} defaultValue={122}></Regulator>
-            <Regulator title="Integral" minValue={0} maxValue={255} defaultValue={122}></Regulator>
-            <Regulator title="Derivative"minValue={0} maxValue={255} defaultValue={122}></Regulator>
+            <p>{props.title}</p>
+            <Regulator title="Proportional" minValue={props.minValue} maxValue={props.maxValue} defaultValue={props.defaultValue}></Regulator>
+            <Regulator title="Integral" minValue={props.minValue} maxValue={props.maxValue} defaultValue={props.defaultValue}></Regulator>
+            <Regulator title="Derivative"minValue={props.minValue} maxValue={props.maxValue} defaultValue={props.defaultValue}></Regulator>
         </div>
     )
 }

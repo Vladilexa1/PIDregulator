@@ -30,6 +30,8 @@ input.range{
 
 input.numberRange{
     margin: 5px;
+    width: 60px;
+    text-align: center;
 }
 
 span{
@@ -41,29 +43,57 @@ span{
 
 .button-panel{
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: space-between;
   background-color: cadetblue;
   border: 1px solid;
   color: #ccc;
 }
 
 .btn{
-  width: 10%;
+  width: 30%;
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 10px;
+}
+.btn-save{
   background-color: #ded9d9;
   color: #000;
   border-color: #000;
 }
-.btn:hover{
+.btn-save:hover{
   background-color: #b3afaf;
   color: #000;
 }
-.btn:active{
+.btn-save:active{
   background-color: #807a7a !important; 
   color: #000!important;
+  border-color: #000!important;
 }
+.btn-ref{
+  background-color: #ded9d9;
+  color: #000;
+  border-color: #000;
+}
+.btn-ref:hover{
+  background-color: #b3afaf;
+  color: #000;
+  border-color: #000;
+}
+.btn-ref:active{
+  background-color: #807a7a !important; 
+  color: #000!important;
+  border-color: #000!important;
+}
+
+.danger{
+  display: flex;
+}
+
+.save-ref{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 
 
 input[type='number']::-webkit-outer-spin-button,
