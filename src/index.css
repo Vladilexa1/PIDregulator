@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.regulator{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #34c0eb;
+}
+
+.nameReg{
+  padding: 100px;
+}
+
+input.range{
+  margin: 5px;
+  color: #000;
+}
+
+input.numberRange{
+    margin: 5px;
+}
+
+span{
+  display: inline;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
