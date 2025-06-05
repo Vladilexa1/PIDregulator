@@ -8,7 +8,7 @@ export default function Regulator(props){
         <div class='container'>
                 <div class='row'>
                     <span class='col-2'>{props.title}</span>
-                    <input class='col-1 numberRange' type='number' value={property()} 
+                    <input class='numberRange' type='number' value={property()} 
                         onInput={(e) => {
                             let value = e.target.value;
                             value = value.replace(/\D/g, "")
