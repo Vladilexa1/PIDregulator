@@ -1,3 +1,4 @@
+import ButtonPanel from "./components/ButtonPanel";
 import PIDComponent from "./components/PIDComponent"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
       <PIDComponent/>
       <PIDComponent/>
       <PIDComponent/>
+      <ButtonPanel/>
     </div>
   );
 }
