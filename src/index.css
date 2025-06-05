@@ -43,6 +43,8 @@ span{
   display: flex;
   flex-direction: row-reverse;
   background-color: cadetblue;
+  border: 1px solid;
+  color: #ccc;
 }
 
 .btn{
@@ -57,6 +59,10 @@ span{
 .btn:hover{
   background-color: #b3afaf;
   color: #000;
+}
+.btn:active{
+  background-color: #807a7a !important; 
+  color: #000!important;
 }
 
 
