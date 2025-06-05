@@ -1,3 +1,5 @@
+import Regulator from "./Regulator"
+
 export default function ButtonPanel(){
     return(
         <div class="button-panel">
@@ -6,7 +8,7 @@ export default function ButtonPanel(){
             </div>
             <div class="save-ref col-6">
                 <button class="btn btn-success btn-save">Save</button>
-                <button class="btn btn-primary btn-ref">Refresh</button>
+                <button class="btn btn-primary btn-ref" onclick={() => window.location.reload()}>Refresh</button>
             </div>
         </div>
     )
