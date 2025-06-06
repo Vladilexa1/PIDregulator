@@ -2,6 +2,7 @@ import { createSignal, createEffect } from 'solid-js';
 
 export default function Regulator(props) {
     const [property, setProperty] = createSignal(props.defaultValue);
+    const [inputValue, setInputValue] = createSignal(props.defaultValue);
 
     createEffect(() => {
         props.onChange?.(+property());
@@ -14,17 +15,18 @@ export default function Regulator(props) {
                 <input
                     class='numberRange'
                     type='number'
-                    value={property()}
+                    value={inputValue()}
                     onInput={(e) => {
-                        let value = e.target.value;
-                        value = value.replace(/\D/g, "");
+                        let value = e.target.value.replace(/\D/g, "");
                         value = value.replace(/^0+(?!$)/, "");
-                        let numeric = +value;
+                        setInputValue(value);
+                    }}
+                    onBlur={() => {
+                        let numeric = +inputValue();
                         if (numeric < props.minValue) numeric = props.minValue;
                         if (numeric > props.maxValue) numeric = props.maxValue;
-
                         setProperty(numeric);
-                        e.target.value = numeric;
+                        setInputValue(numeric);
                     }}
                 />
                 <input
@@ -36,6 +38,7 @@ export default function Regulator(props) {
                     onInput={(e) => {
                         const val = +e.target.value;
                         setProperty(val);
+                        setInputValue(val);
                     }}
                 />
             </div>
