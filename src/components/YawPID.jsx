@@ -1,7 +1,7 @@
 import { createSignal, createEffect } from 'solid-js';
 import Regulator from './Regulator';
 
-export default function PIDComponent(props) {
+export default function YawPID(props) {
     const [p, setP] = createSignal(props.defaultValue);
     const [i, setI] = createSignal(props.defaultValue);
     const [d, setD] = createSignal(props.defaultValue);
