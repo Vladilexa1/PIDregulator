@@ -3,6 +3,7 @@ import ButtonPanel from "./components/ButtonPanel";
 import YawPID from "./components/YawPID"
 import RollPitchSettings from "./components/RollPitchSettings"
 import ThrottleSettings from "./components/ThrottleSettings"
+import SmoothValues from "./components/SmoothValues";
 import { settings } from "./config";
 const URL = 'http://127.0.0.1:5000/'
 
@@ -42,6 +43,13 @@ function App() {
       
       <ThrottleSettings
         title="Throttle" 
+        minValue={settings.minValue_A} 
+        maxValue={settings.maxValue_A} 
+        defaultValue={settings.defaultValue_A}
+        onChange={handlePidChange}/>
+      
+      <SmoothValues
+        title="Smooth values" 
         minValue={settings.minValue_A} 
         maxValue={settings.maxValue_A} 
         defaultValue={settings.defaultValue_A}
