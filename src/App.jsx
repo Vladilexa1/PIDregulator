@@ -1,6 +1,7 @@
 import { createSignal } from "solid-js";
 import ButtonPanel from "./components/ButtonPanel";
-import PIDComponent from "./components/PIDComponent"
+import YawPID from "./components/YawPID"
+import RollPitchSettings from "./components/RollPitchSettings"
 import { settings } from "./config";
 const URL = 'http://127.0.0.1:5000/'
 
@@ -24,27 +25,20 @@ function App() {
 
   return (
     <div>
-      <PIDComponent 
-        title={"something 1"} 
+      <RollPitchSettings
+      title={"Roll/Pitch"} 
+      minValue={settings.minValue_A} 
+      maxValue={settings.maxValue_A} 
+      defaultValue={settings.defaultValue_A}
+      onChange={handlePidChange}/>
+      
+      <YawPID 
+        title={"PID Yaw"} 
         minValue={settings.minValue_A} 
         maxValue={settings.maxValue_A} 
         defaultValue={settings.defaultValue_A}
         onChange={handlePidChange}/>
-      
-      <PIDComponent 
-        title={"something 2"} 
-        minValue={settings.minValue_A} 
-        maxValue={settings.maxValue_A} 
-        defaultValue={settings.defaultValue_A}
-        onChange={handlePidChange}/>
-      
-      <PIDComponent 
-        title={"something 3"} 
-        minValue={settings.minValue_A} 
-        maxValue={settings.maxValue_A} 
-        defaultValue={settings.defaultValue_A}
-        onChange={handlePidChange}/>
-      
+
       <ButtonPanel onSend={sendToBackend}/>
     </div>
   );

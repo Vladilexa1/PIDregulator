@@ -29,7 +29,13 @@ input.numberRange{
     width: 60px;
     text-align: center;
 }
-
+select{
+  margin-left: -3px;
+  margin-top: 5px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+}
 span{
   display: inline;
   display: flex;
