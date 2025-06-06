@@ -2,7 +2,7 @@ import { createSignal } from "solid-js";
 import ButtonPanel from "./components/ButtonPanel";
 import PIDComponent from "./components/PIDComponent"
 import { settings } from "./config";
-const URL = 'http://your-backend-url/api/pid'
+const URL = 'http://127.0.0.1:5000/'
 
 function App() {
   const [pidData, setPidData] = createSignal()

@@ -17,21 +17,21 @@ export default function PIDComponent(props) {
         <div class='regulator'>
             <p>{props.title}</p>
             <Regulator
-                title="P"
+                title="Proportional"
                 defaultValue={p()}
                 minValue={props.minValue}
                 maxValue={props.maxValue}
                 onChange={setP}
             />
             <Regulator
-                title="I"
+                title="Integral"
                 defaultValue={i()}
                 minValue={props.minValue}
                 maxValue={props.maxValue}
                 onChange={setI}
             />
             <Regulator
-                title="D"
+                title="Derivative"
                 defaultValue={d()}
                 minValue={props.minValue}
                 maxValue={props.maxValue}
