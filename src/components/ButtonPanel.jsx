@@ -1,5 +1,3 @@
-
-
 export default function ButtonPanel(props){
     return(
         <div class="button-panel">
