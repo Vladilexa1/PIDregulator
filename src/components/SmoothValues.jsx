@@ -17,15 +17,15 @@ export default function SmoothValues(props) {
             <Regulator
                 title="Position estimation smooth"
                 defaultValue={position()}
-                minValue={props.minValue}
-                maxValue={props.maxValue}
+                minValue={props.minValueEA}
+                maxValue={props.maxValueEA}
                 onChange={setPosition}
             />
             <Regulator
                 title="Speed estimation smooth"
                 defaultValue={speed()}
-                minValue={props.minValue}
-                maxValue={props.maxValue}
+                minValue={props.minValueDEA}
+                maxValue={props.maxValueDEA}
                 onChange={setSpeed}
             />
         </div>

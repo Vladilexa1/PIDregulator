@@ -19,22 +19,22 @@ export default function YawPID(props) {
             <Regulator
                 title="Proportional"
                 defaultValue={p()}
-                minValue={props.minValue}
-                maxValue={props.maxValue}
+                minValue={props.minValueYawP}
+                maxValue={props.maxValueYawP}
                 onChange={setP}
             />
             <Regulator
                 title="Integral"
                 defaultValue={i()}
-                minValue={props.minValue}
-                maxValue={props.maxValue}
+                minValue={props.minValueYawI}
+                maxValue={props.maxValueYawI}
                 onChange={setI}
             />
             <Regulator
                 title="Derivative"
                 defaultValue={d()}
-                minValue={props.minValue}
-                maxValue={props.maxValue}
+                minValue={props.minValueYawD}
+                maxValue={props.maxValueYawD}
                 onChange={setD}
             />
         </div>

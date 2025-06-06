@@ -21,29 +21,29 @@ export default function ThrottleSettings(props) {
             <Regulator
                 title="Proportional"
                 defaultValue={p()}
-                minValue={props.minValue}
-                maxValue={props.maxValue}
+                minValue={props.minValueThrottleP}
+                maxValue={props.maxValueThrottleP}
                 onChange={setP}
             />
             <Regulator
                 title="Integral"
                 defaultValue={i()}
-                minValue={props.minValue}
-                maxValue={props.maxValue}
+                minValue={props.minValueThrottleI}
+                maxValue={props.maxValueThrottleI}
                 onChange={setI}
             />
             <Regulator
                 title="Derivative"
                 defaultValue={d()}
-                minValue={props.minValue}
-                maxValue={props.maxValue}
+                minValue={props.minValueThrottleD}
+                maxValue={props.maxValueThrottleD}
                 onChange={setD}
             />
             <Regulator
                 title="Max PID"
                 defaultValue={maxPid()}
-                minValue={props.minValue}
-                maxValue={props.maxValue}
+                minValue={props.minValueThrottlePIDMax}
+                maxValue={props.maxValueThrottlePIDMax}
                 onChange={setMaxPid}
             />
         </div>
