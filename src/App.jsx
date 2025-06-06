@@ -2,6 +2,7 @@ import { createSignal } from "solid-js";
 import ButtonPanel from "./components/ButtonPanel";
 import YawPID from "./components/YawPID"
 import RollPitchSettings from "./components/RollPitchSettings"
+import ThrottleSettings from "./components/ThrottleSettings"
 import { settings } from "./config";
 const URL = 'http://127.0.0.1:5000/'
 
@@ -27,13 +28,20 @@ function App() {
     <div>
       <RollPitchSettings
       title={"Roll/Pitch"} 
-      minValue={settings.minValue_A} 
-      maxValue={settings.maxValue_A} 
+      minValue={0} 
+      maxValue={100} 
       defaultValue={settings.defaultValue_A}
       onChange={handlePidChange}/>
       
       <YawPID 
         title={"PID Yaw"} 
+        minValue={settings.minValue_A} 
+        maxValue={settings.maxValue_A} 
+        defaultValue={settings.defaultValue_A}
+        onChange={handlePidChange}/>
+      
+      <ThrottleSettings
+        title="Throttle" 
         minValue={settings.minValue_A} 
         maxValue={settings.maxValue_A} 
         defaultValue={settings.defaultValue_A}

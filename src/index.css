@@ -26,13 +26,13 @@ input.range{
 
 input.numberRange{
     margin: 5px;
-    width: 60px;
+    width: 70px;
     text-align: center;
 }
 select{
   margin-left: -3px;
   margin-top: 5px;
-  width: 60px;
+  width: 70px;
   height: 30px;
   text-align: center;
 }
