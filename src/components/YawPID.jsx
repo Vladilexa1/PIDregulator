@@ -2,15 +2,15 @@ import { createSignal, createEffect } from 'solid-js';
 import Regulator from './Regulator';
 
 export default function YawPID(props) {
-    const [p, setP] = createSignal(props.defaultValue);
-    const [i, setI] = createSignal(props.defaultValue);
-    const [d, setD] = createSignal(props.defaultValue);
+    const [p, setP] = createSignal(props.defaultValue.P);
+    const [i, setI] = createSignal(props.defaultValue.I);
+    const [d, setD] = createSignal(props.defaultValue.D);
 
     createEffect(() => {
         const pVal = p();
         const iVal = i();
         const dVal = d();
-        props.onChange?.(props.title, pVal, iVal, dVal);
+        props.onChange?.(props.title, {p: pVal, i: iVal, d:dVal});
     });
 
     return (

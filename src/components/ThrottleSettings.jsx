@@ -2,17 +2,17 @@ import { createSignal, createEffect } from 'solid-js';
 import Regulator from './Regulator';
 
 export default function ThrottleSettings(props) {
-    const [p, setP] = createSignal(props.defaultValue);
-    const [i, setI] = createSignal(props.defaultValue);
-    const [d, setD] = createSignal(props.defaultValue);
-    const [maxPid, setMaxPid] = createSignal(props.defaultValue);
+    const [p, setP] = createSignal(props.defaultValue.P);
+    const [i, setI] = createSignal(props.defaultValue.I);
+    const [d, setD] = createSignal(props.defaultValue.D);
+    const [maxPid, setMaxPid] = createSignal(props.defaultValue.PIDMax);
 
     createEffect(() => {
         const pVal = p();
         const iVal = i();
         const dVal = d();
         const maxPidVal = maxPid();
-        props.onChange?.(props.title, pVal, iVal, dVal, maxPidVal);
+        props.onChange?.(props.title, {p: pVal, i: iVal, d: dVal, maxPidVal: maxPidVal});
     });
 
     return (
@@ -44,6 +44,7 @@ export default function ThrottleSettings(props) {
                 defaultValue={maxPid()}
                 minValue={props.minValueThrottlePIDMax}
                 maxValue={props.maxValueThrottlePIDMax}
+                description="limits the maximum position of the control signal remote sticks"
                 onChange={setMaxPid}
             />
         </div>

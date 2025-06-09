@@ -93,6 +93,21 @@ span{
   display: flex;
   flex-direction: row-reverse;
 }
+
+.helpWindow{
+  display: inline-block; 
+  width: 18px; 
+  height: 18px; 
+  text-align: center; 
+  font-size: 12px; 
+  line-height: 18px;
+  cursor: default; 
+  user-select: none;
+  border-radius: 50%;
+}
+
+
+
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;

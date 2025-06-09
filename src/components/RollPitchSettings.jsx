@@ -2,11 +2,12 @@ import { createSignal, createEffect } from 'solid-js';
 import Regulator from './Regulator';
 
 export default function YawPID(props) {
-    const [p, setP] = createSignal(props.defaultValue);
-    const [i, setI] = createSignal(props.defaultValue);
-    const [d, setD] = createSignal(props.defaultValue);
-    const [maxPid, setMaxPid] = createSignal(props.defaultValue);
-    const [reach, setReach] = createSignal(props.defaultValue);
+    const [p, setP] = createSignal(props.defaultValue.P);
+    const [i, setI] = createSignal(props.defaultValue.I);
+    const [d, setD] = createSignal(props.defaultValue.D);
+    const [maxPid, setMaxPid] = createSignal(props.defaultValue.PIDMax);
+    const [reach, setReach] = createSignal(props.defaultValue.Reach);
+    const [orientation, setOrientation] = createSignal("1");
 
     createEffect(() => { 
         const pVal = p();
@@ -14,7 +15,7 @@ export default function YawPID(props) {
         const dVal = d();
         const maxPidVal = maxPid();
         const reachVal = reach();
-        props.onChange?.(props.title, pVal, iVal, dVal, maxPidVal, reachVal);
+        props.onChange?.(props.title, {p: pVal, i: iVal, d: dVal, maxPidVal: maxPidVal, reachVal: reachVal, orientation: orientation()});
     });
 
     return (
@@ -25,6 +26,7 @@ export default function YawPID(props) {
                 defaultValue={p()}
                 minValue={props.minValueP}
                 maxValue={props.maxValueP}
+                description="QWE"
                 onChange={setP}
             />
             <Regulator
@@ -57,8 +59,8 @@ export default function YawPID(props) {
             />
             <div class='container'>
                 <div style="display: flex; align-items: center;">
-                    <span class='col-2'>Orientation</span>
-                    <select class='col-0'>
+                    <span class='col-1'>Orientation</span>
+                    <select class='col-0' value={orientation()} onInput={e => setOrientation(e.target.value)}>
                         <option>1</option>
                         <option>-1</option>
                     </select>

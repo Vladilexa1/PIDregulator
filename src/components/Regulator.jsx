@@ -7,11 +7,10 @@ export default function Regulator(props) {
     createEffect(() => {
         props.onChange?.(+property());
     });
-
     return (
         <div class='container'>
-            <div class='row'>
-                <span class='col-2'>{props.title}</span>
+            <div class='row align-items-center'>
+                <span class='col-1'>{props.title}</span>
                 <input
                     class='numberRange'
                     type='number'
@@ -30,7 +29,7 @@ export default function Regulator(props) {
                     }}
                 />
                 <input
-                    class='col-8 p-0 range'
+                    class='col-7 p-0 range'
                     type='range'
                     min={props.minValue}
                     max={props.maxValue}

@@ -2,13 +2,13 @@ import { createSignal, createEffect } from 'solid-js';
 import Regulator from './Regulator';
 
 export default function SmoothValues(props) {
-    const [position, setPosition] = createSignal(props.defaultValue);
-    const [speed, setSpeed] = createSignal(props.defaultValue);
+    const [position, setPosition] = createSignal(props.defaultValue.EMA_ALPHA);
+    const [speed, setSpeed] = createSignal(props.defaultValue.D_EMA_ALPHA);
 
     createEffect(() => {
         const pVal = position();
-        const iVal = speed();
-        props.onChange?.(props.title, pVal, iVal, dVal, maxPidVal);
+        const sVal = speed();
+        props.onChange?.(props.title, {position: pVal, speed: sVal});
     });
 
     return (
