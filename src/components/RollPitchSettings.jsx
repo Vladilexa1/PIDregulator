@@ -7,7 +7,7 @@ export default function YawPID(props) {
     const [d, setD] = createSignal(props.defaultValue.D);
     const [maxPid, setMaxPid] = createSignal(props.defaultValue.PIDMax);
     const [reach, setReach] = createSignal(props.defaultValue.Reach);
-    const [orientation, setOrientation] = createSignal("1");
+    const [orientation, setOrientation] = createSignal(props.defaultValue.Orient);
 
     createEffect(() => { 
         const pVal = p();
@@ -61,8 +61,8 @@ export default function YawPID(props) {
                 <div style="display: flex; align-items: center;">
                     <span class='col-1'>Orientation</span>
                     <select class='col-0' value={orientation()} onInput={e => setOrientation(e.target.value)}>
-                        <option>1</option>
-                        <option>-1</option>
+                        <option value="1">1</option>
+                        <option value="-1">-1</option>
                     </select>
                 </div>
             </div>

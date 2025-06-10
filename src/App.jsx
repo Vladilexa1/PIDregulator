@@ -14,11 +14,9 @@ function App() {
   onMount(async () => {
     const res = await fetch(`${URL}`);
     const data = await res.json();
-    console.log(data);
     setDefaultValues(data);
   });
   
-  console.log(defaultValues())
 
   const handlePidChange = (title, values) => {
     setPidData(prev => ({
@@ -58,7 +56,8 @@ function App() {
                 I: defaultValues().currentValue_RollPitchI,
                 D: defaultValues().currentValue_RollPitchD,
                 PIDMax: defaultValues().currentValue_RollPitchPIDMax,
-                Reach: defaultValues().currentValue_RollPitchReach
+                Reach: defaultValues().currentValue_RollPitchReach,
+                Orient: defaultValues().currentOrientation
               }}
               onChange={handlePidChange}
             />
