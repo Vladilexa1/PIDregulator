@@ -17,7 +17,13 @@ function App() {
     setDefaultValues(data);
   });
   
-
+  const refreshData = async () => {
+    const res = await fetch(`${URL}/ref`);
+    window.location.reload();
+    const data = await res.json();
+    setDefaultValues(data);
+  };
+  
   const handlePidChange = (title, values) => {
     setPidData(prev => ({
       ...prev,
@@ -110,7 +116,7 @@ function App() {
               onChange={handlePidChange}
             />
     
-            <ButtonPanel onSend={sendToBackend}/>
+            <ButtonPanel onSend={sendToBackend} onRef={refreshData}/>
           </>
         )}
       </div>
