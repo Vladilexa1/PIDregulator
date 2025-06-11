@@ -48,6 +48,8 @@ export default function YawPID(props) {
                 defaultValue={maxPid()}
                 minValue={props.minValuePIDMax}
                 maxValue={props.maxValuePIDMax}
+                tooltips="limits the maximum position of the control signal remote sticks"
+                visible={true}
                 onChange={setMaxPid}
             />
             <Regulator
@@ -55,6 +57,8 @@ export default function YawPID(props) {
                 defaultValue={reach()}
                 minValue={props.minValueReach}
                 maxValue={props.maxValueReach}
+                tooltips="stick speed in rc/sec"
+                visible={true}
                 onChange={setReach}
             />
             <div class='container'>
@@ -64,6 +68,9 @@ export default function YawPID(props) {
                         <option value="1">1</option>
                         <option value="-1">-1</option>
                     </select>
+                    <span class="col-1" tabindex="0" data-bs-toggle="tooltip" title={'1 "Direct", -1 "Reverse"'} style={{display: true ? "inline-block":"none"}}>
+                        <button class="btn btn-secondary" type="button" disabled>?</button>
+                    </span>
                 </div>
             </div>
         </div>

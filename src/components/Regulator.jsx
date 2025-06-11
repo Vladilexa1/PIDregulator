@@ -40,6 +40,9 @@ export default function Regulator(props) {
                         setInputValue(val);
                     }}
                 />
+                <span class="col-1" tabindex="0" data-bs-toggle="tooltip" title={props.tooltips} style={{display: props.visible ? "inline-block":"none"}}>
+                    <button class="btn btn-secondary" type="button" disabled>?</button>
+                </span>
             </div>
         </div>
     );

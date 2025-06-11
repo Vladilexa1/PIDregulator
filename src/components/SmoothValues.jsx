@@ -19,6 +19,8 @@ export default function SmoothValues(props) {
                 defaultValue={position()}
                 minValue={props.minValueEA}
                 maxValue={props.maxValueEA}
+                tooltips="position smoothing coefficient, the larger it is, the smoother the drone, but the larger the position holding radius (floating at a point)"
+                visible={true}
                 onChange={setPosition}
             />
             <Regulator
@@ -26,6 +28,8 @@ export default function SmoothValues(props) {
                 defaultValue={speed()}
                 minValue={props.minValueDEA}
                 maxValue={props.maxValueDEA}
+                tooltips="smoothing coefficient D of the component, the larger it is, the slower and smoother the drone reacts to changes in the speed of the board (reaction to the wind)"
+                visible={true}
                 onChange={setSpeed}
             />
         </div>

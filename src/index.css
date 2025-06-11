@@ -94,6 +94,12 @@ span{
   flex-direction: row-reverse;
 }
 
+.btn-secondary{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 .helpWindow{
   display: inline-block; 
   width: 18px; 
